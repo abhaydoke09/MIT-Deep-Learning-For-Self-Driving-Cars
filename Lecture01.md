@@ -3,4 +3,5 @@
 - Perceptron
 - Neural Networks
   - Universality :  For any arbitrary function f(x), there exists a neural
-                    network that closely approximate it for any input x  
+                    network that closely approximate it for any input x 
+- Special Purpose Intelligence Vs General Purpose Intelligence
