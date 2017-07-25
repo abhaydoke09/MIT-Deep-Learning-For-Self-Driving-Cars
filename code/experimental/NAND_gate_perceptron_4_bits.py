@@ -30,13 +30,17 @@ def getData(nbits):
 
 nbits = 4
 X,Y = getData(nbits)
-print X.shape,Y.shape
-# biases = np.ones((4,1))
-# X = np.hstack((X,biases))
-# weights = np.random.randn(3)
-# learning_rate = 0.1
+biases = np.ones((X.shape[0],1))
+X = np.hstack((X,biases))
+weights = np.random.randn(X.shape[1])
+#print X.shape,Y.shape
+print weights
+learning_rate = 0.1
 
-# weights = train(X,Y,weights)
+X_train, Y_train = X[:10], Y[:10]
+
+weights = train(X_train, Y_train, weights)
+print weights
 # predict(X,Y,weights)
 
 
