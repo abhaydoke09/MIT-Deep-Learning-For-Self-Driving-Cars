@@ -1,7 +1,8 @@
 import numpy as np 
 import math
 
-sigmoid = lambda x: 1.0/(1+math.exp(-1.0*x))
+sigmoid = lambda x: 1/(1 + np.exp(-x))
+
 def activation(val):
 	return 1 if val>0.0 else 0
 
@@ -21,7 +22,7 @@ def predict(X, Y, W):
 
 
 X = np.array([[0,0],[0,1],[1,0],[1,1]])
-Y = np.array([[0],[1],[1],[0]])
+Y = np.array([[0],[0],[0],[1]])
 biases = np.ones((4,1))
 X = np.hstack((X,biases))
 weights = np.random.randn(3)
