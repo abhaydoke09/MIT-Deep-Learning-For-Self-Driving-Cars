@@ -2,6 +2,7 @@ import numpy as np
 import math
 
 sigmoid = lambda x: 1/(1 + np.exp(-x))
+relu = lambda x: x*(x>0)
 
 def activation(val):
 	return 1 if val>0.0 else 0
@@ -22,14 +23,16 @@ def predict(X, Y, W):
 
 
 X = np.array([[0,0],[0,1],[1,0],[1,1]])
-Y = np.array([[0],[0],[0],[1]])
+Y = np.array([[0],[1],[1],[0]])
 biases = np.ones((4,1))
 X = np.hstack((X,biases))
-weights = np.random.randn(3)
-learning_rate = 0.1
+weights_1 = np.random.randn(2,3)
+weights_2 = np.random.randn(2,3)
 
-weights = train(X,Y,weights)
-predict(X,Y,weights)
+print weights_1, relu(weights_1)
+
+# weights = train(X,Y,weights)
+# predict(X,Y,weights)
 
 
 
